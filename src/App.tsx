@@ -1,10 +1,10 @@
-import React from "react";
-import SignupPage from "./pages/SignupPage";
+import { ThemeProvider } from "@/components/theme-provider"
+import MainPage from "./pages/MainPage";
 
 export default function App() {
   return (
-    <React.Fragment>
-      <SignupPage />
-    </React.Fragment>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <MainPage />
+    </ThemeProvider>
   );
 }
