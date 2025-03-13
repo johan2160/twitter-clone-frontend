@@ -7,7 +7,7 @@ export default function NotificationsPage() {
       <div className="w-full max-w-2xl">
         <div className="flex justify-between p-4">
           <h1 className="font-medium">Notifications</h1>
-          <p>0 unread</p>
+          <p className="text-sm">0 unread</p>
         </div>
         {/* <NotificationCard /> */}
         <div className="flex flex-col p-4 gap-4">
