@@ -5,6 +5,7 @@ import {
   Home,
   User,
 } from "lucide-react"
+import { useLocation } from "react-router-dom"
 
 import { NavMain } from "@/components/nav-main"
 import { NavUser } from "@/components/nav-user"
@@ -17,7 +18,7 @@ import {
 } from "@/components/ui/sidebar"
 import { RiTwitterLine } from "@remixicon/react"
 
-const data = {
+const getNavItems = (pathname: string) => ({
   user: {
     name: "shadcn",
     email: "m@example.com",
@@ -26,29 +27,35 @@ const data = {
   navMain: [
     {
       title: "Home",
-      url: "#",
+      url: "/",
       icon: Home,
-      isActive: true,
+      isActive: pathname === "/",
     },
     {
       title: "Notifications",
-      url: "#",
+      url: "/notifications",
       icon: Bell,
+      isActive: pathname === "/notifications",
     },
     {
-      title: "Saved",
-      url: "#",
+      title: "Bookmarks",
+      url: "/bookmarks",
       icon: Bookmark,
+      isActive: pathname === "/bookmarks",
     },
     {
       title: "Profile",
-      url: "#",
+      url: "/profile",
       icon: User,
+      isActive: pathname === "/profile",
     }
   ],
-}
+})
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { pathname } = useLocation();
+  const data = getNavItems(pathname);
+  
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
