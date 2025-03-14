@@ -41,7 +41,7 @@ export default function WhoToFollow() {
           <div key={user.username} className="flex items-center justify-between gap-2">
             <div className="flex items-center gap-3">
               <Avatar>
-                <AvatarFallback className="bg-muted">{user.initials}</AvatarFallback>
+                <AvatarFallback className="bg-accent">{user.initials}</AvatarFallback>
               </Avatar>
               <div className="grid gap-0.5">
                 <span className="text-sm font-medium">{user.name}</span>
