@@ -11,8 +11,8 @@ export default function SignupPage() {
           </div>
         </div>
       </div>
-      <div className="relative hidden bg-muted lg:flex lg:items-center lg:justify-center">
-        <RiTwitterLine size={320} />
+      <div className="relative hidden bg-primary lg:flex lg:items-center lg:justify-center">
+        <RiTwitterLine className="text-background" size={320} />
       </div>
     </div>
   )
