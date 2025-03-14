@@ -12,7 +12,7 @@ export default function ProfilePage() {
         <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
           <Avatar className="w-24 h-24 border-2 border-border">
             <AvatarImage src="" alt="Profile picture" />
-            <AvatarFallback className="bg-muted"></AvatarFallback>
+            <AvatarFallback className="bg-accent"></AvatarFallback>
           </Avatar>
 
           <div className="flex-1 space-y-1">
