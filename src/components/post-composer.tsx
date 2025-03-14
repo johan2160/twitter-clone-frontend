@@ -26,9 +26,9 @@ export default function PostComposer() {
 
   return (
     <div className="w-full max-w-2xl px-4 lg:px-0">
-      <div className="bg-sidebar rounded-lg px-4 py-6 shadow-xs border border-border">
+      <div className="bg-sidebar/60 rounded-lg px-4 py-6 shadow-xs border border-border">
         <div className="flex items-start gap-3 mb-4">
-          <div className="size-10 rounded-full bg-stone-200 dark:bg-stone-800"></div>
+          <div className="size-10 rounded-full bg-accent"></div>
 
           <div className="flex-1">
             <textarea
