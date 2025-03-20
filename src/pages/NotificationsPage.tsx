@@ -13,7 +13,7 @@ export default function NotificationsPage() {
         <div className="flex flex-col p-4 gap-4">
           <Card className="w-full">
               <CardHeader className="flex-row items-center">
-                <div className="size-8 bg-primary/10 rounded-full" />
+                <div className="size-8 bg-accent rounded-full" />
                 <CardTitle className="font-medium">@shadowelkaiser liked your post</CardTitle>
                 <Heart width={16} />
               </CardHeader>
@@ -28,7 +28,7 @@ export default function NotificationsPage() {
           </Card>
           <Card className="w-full">
               <CardHeader className="flex-row items-center">
-                <div className="size-8 bg-primary/10 rounded-full" />
+                <div className="size-8 bg-accent rounded-full" />
                 <CardTitle className="font-medium">@shadowelkaiser started following you</CardTitle>
                 <UserPlus width={16} />
               </CardHeader>
