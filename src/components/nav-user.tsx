@@ -1,13 +1,6 @@
-import {
-  ChevronsUpDown,
-  LogOut,
-} from "lucide-react"
+import { ChevronsUpDown, LogOut } from "lucide-react";
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,25 +9,43 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar"
-import { ModeToggle } from "./mode-toggle"
+} from "@/components/ui/sidebar";
+import { ModeToggle } from "./mode-toggle";
+import { ThemeColors } from "./theme-colors";
+import { authClient } from "@/lib/auth-client";
+import { useNavigate } from "react-router-dom";
+import { toast } from "sonner";
 
 export function NavUser({
   user,
 }: {
   user: {
-    name: string
-    email: string
-    avatar: string
-  }
+    name: string;
+    email: string;
+    avatar: string;
+  };
 }) {
-  const { isMobile } = useSidebar()
+  const { isMobile } = useSidebar();
+  const navigate = useNavigate();
+
+  async function handleSignOut() {
+    await authClient.signOut({
+      fetchOptions: {
+        onSuccess: () => {
+          navigate("/signin");
+        },
+        onError: (ctx) => {
+          toast.error(ctx.error.message);
+        }
+      },
+    });
+  }
 
   return (
     <SidebarMenu>
@@ -77,14 +88,15 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <ModeToggle />
-            <DropdownMenuItem>
-              <LogOut />
-              Log out
-            </DropdownMenuItem>
+              <ThemeColors />
+              <DropdownMenuItem onClick={handleSignOut}>
+                <LogOut className="h-4 w-4" />
+                <span>Log out</span>
+              </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>
     </SidebarMenu>
-  )
+  );
 }
