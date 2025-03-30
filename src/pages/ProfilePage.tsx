@@ -26,7 +26,7 @@ export default function ProfilePage() {
       <div className="w-full max-w-2xl py-8 px-4">
         <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
           <Avatar className="w-24 h-24 border-2 border-border">
-            <AvatarImage src={user.image || ""} alt={`${user.name}'s profile picture`} />
+            <AvatarImage src={user.image || undefined} alt={`${user.name}'s profile picture`} />
             <AvatarFallback className="bg-accent text-2xl">
               {user.name?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}
             </AvatarFallback>
