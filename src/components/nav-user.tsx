@@ -17,7 +17,7 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 import { ModeToggle } from "./mode-toggle";
-import { ThemeColors } from "./theme-colors";
+import { ColorToggle } from "./color-toggle";
 import { authClient } from "@/lib/auth-client";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
@@ -88,7 +88,7 @@ export function NavUser({
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <ModeToggle />
-              <ThemeColors />
+              <ColorToggle />
               <DropdownMenuItem onClick={handleSignOut}>
                 <LogOut className="h-4 w-4" />
                 <span>Log out</span>
