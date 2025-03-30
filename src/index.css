@@ -111,6 +111,7 @@
   --sidebar-foreground: oklch(95% 0.01 316.59);
   --sidebar-primary: oklch(46.76% 0.1426 316.59);
   --sidebar-accent: oklch(30% 0.08 316.59);
+  --sidebar-accent-foreground: oklch(95% 0.01 316.59);
 }
 
 /* Dark Mode - Orange Theme */
@@ -136,6 +137,7 @@
   --sidebar-foreground: oklch(95% 0.01 79.41);
   --sidebar-primary: oklch(46.76% 0.1426 79.41);
   --sidebar-accent: oklch(30% 0.08 79.41);
+  --sidebar-accent-foreground: oklch(95% 0.01 79.41);
 }
 
 /* Dark Mode - Blue Theme */
@@ -161,6 +163,7 @@
   --sidebar-foreground: oklch(95% 0.01 271.06);
   --sidebar-primary: oklch(46.76% 0.1426 271.06);
   --sidebar-accent: oklch(30% 0.08 271.06);
+  --sidebar-accent-foreground: oklch(95% 0.01 271.06);
 }
 
 @theme inline {
