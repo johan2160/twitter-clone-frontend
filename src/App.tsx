@@ -9,31 +9,39 @@ import SignupPage from "./pages/SignupPage";
 import { MainLayout } from "./layouts/MainLayout";
 import { AuthLayout } from "./layouts/AuthLayout";
 import { Toaster } from "sonner";
+import { TanstackQueryProvider } from "./providers/TanstackQueryProvider";
+import TestingPage from "./pages/TestingPage";
+import { ColorsProvider } from "./components/colors-provider";
 
 export default function App() {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <BrowserRouter>
-        <Routes>
-          {/* Auth routes */}
-          <Route element={<AuthLayout />}>
-            <Route path="/signin" element={<SigninPage />} />
-            <Route path="/signup" element={<SignupPage />} />
-          </Route>
+    <TanstackQueryProvider>
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+        <ColorsProvider>
+          <BrowserRouter>
+            <Routes>
+              {/* Auth routes */}
+              <Route element={<AuthLayout />}>
+                <Route path="/signin" element={<SigninPage />} />
+                <Route path="/signup" element={<SignupPage />} />
+              </Route>
 
-          {/* Protected routes */}
-          <Route element={<MainLayout />}>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/bookmarks" element={<BookmarksPage />} />
-            <Route path="/notifications" element={<NotificationsPage />} />
-            <Route path="/profile" element={<ProfilePage />} />
-          </Route>
+              {/* Protected routes */}
+              <Route element={<MainLayout />}>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/bookmarks" element={<BookmarksPage />} />
+                <Route path="/notifications" element={<NotificationsPage />} />
+                <Route path="/profile" element={<ProfilePage />} />
+                <Route path="/testing" element={<TestingPage />} />
+              </Route>
 
-          {/* Catch all route */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </BrowserRouter>
-      <Toaster />
-    </ThemeProvider>
+              {/* Catch all route */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </BrowserRouter>
+          <Toaster />
+        </ColorsProvider>
+      </ThemeProvider>
+    </TanstackQueryProvider>
   );
 }
