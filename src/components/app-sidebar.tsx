@@ -3,6 +3,7 @@ import {
     Bell,
   Bookmark,
   Home,
+  TestTubeDiagonal,
   User,
 } from "lucide-react"
 import { useLocation } from "react-router-dom"
@@ -48,6 +49,12 @@ const getNavItems = (pathname: string) => ({
       url: "/profile",
       icon: User,
       isActive: pathname === "/profile",
+    },
+    {
+      title: "Testing",
+      url: "/testing",
+      icon: TestTubeDiagonal,
+      isActive: pathname === "/testing",
     }
   ],
 })
